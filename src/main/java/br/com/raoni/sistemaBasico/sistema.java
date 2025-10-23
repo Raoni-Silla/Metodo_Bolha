@@ -16,10 +16,13 @@ public class sistema {
         System.out.println(" -=-=-=-=-=-=-=-= Lista Original Sem Passar Pelo Bubble Sort -=-=-=-=-=-=-=-= ");
 
         em.getTransaction().begin();
+
         String jpql = "select a from Aluno a";
         TypedQuery<Aluno> query = em.createQuery(jpql, Aluno.class);
         List<Aluno> alunos = query.getResultList();
+
         em.getTransaction().commit();
+
         em.close();
 
         for (Aluno aluno : alunos) {
