@@ -35,10 +35,12 @@ public class sistema {
         for (int i = 0; i < alunos.size()- 1; i++) {
             for (int j = 0; j < alunos.size() - 1 - i; j++) {
                 if (alunos.get(j).getIdade() > alunos.get(j + 1).getIdade()) {
+
                     // troca de posição
                     Aluno temp = alunos.get(j);
                     alunos.set(j, alunos.get(j + 1));
                     alunos.set(j + 1, temp);
+
                 }
             }
         }
