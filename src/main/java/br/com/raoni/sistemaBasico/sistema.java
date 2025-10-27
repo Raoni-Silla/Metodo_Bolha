@@ -32,7 +32,7 @@ public class sistema {
         }
 
 // ------------------- Bubble Sort por idade -------------------
-        for (int i = 0; i < alunos.size() - 1; i++) {
+        for (int i = 0; i < alunos.size()- 1; i++) {
             for (int j = 0; j < alunos.size() - 1 - i; j++) {
                 if (alunos.get(j).getIdade() > alunos.get(j + 1).getIdade()) {
                     // troca de posição
