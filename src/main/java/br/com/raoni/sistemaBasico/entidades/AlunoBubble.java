@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "alunos_bubble") // <-- nome da nova tabela
-public class AlunoBoblle {
+public class AlunoBubble {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ public class AlunoBoblle {
     @Column(name = "idade_aluno")
     private Integer idade; // use Integer para aceitar null
 
-    public AlunoBoblle() {
+    public AlunoBubble() {
     }
 
-    public AlunoBoblle(String nome, String cpf, Integer idade) {
+    public AlunoBubble(String nome, String cpf, Integer idade) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;

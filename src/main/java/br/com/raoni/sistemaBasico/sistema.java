@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import br.com.raoni.sistemaBasico.entidades.AlunoBoblle;
+import br.com.raoni.sistemaBasico.entidades.AlunoBubble;
 
 
 
@@ -19,15 +19,15 @@ public class sistema {
 
         em.getTransaction().begin();
 
-        String jpql = "select a from AlunoBoblle a";
-        TypedQuery<AlunoBoblle> query = em.createQuery(jpql, AlunoBoblle.class);
-        List<AlunoBoblle> alunos = query.getResultList();
+        String jpql = "select a from AlunoBubble a";
+        TypedQuery<AlunoBubble> query = em.createQuery(jpql, AlunoBubble.class);
+        List<AlunoBubble> alunos = query.getResultList();
 
         em.getTransaction().commit();
 
         em.close();
 
-        for (AlunoBoblle aluno : alunos) {
+        for (AlunoBubble aluno : alunos) {
             System.out.println("Nome: " + aluno.getNome() +
                     " | CPF: " + aluno.getCpf() +
                     " | Idade: " + aluno.getIdade());
@@ -39,7 +39,7 @@ public class sistema {
                 if (alunos.get(j).getIdade() > alunos.get(j + 1).getIdade()) {
 
                     // troca de posição
-                    AlunoBoblle temp = alunos.get(j);
+                    AlunoBubble temp = alunos.get(j);
                     alunos.set(j, alunos.get(j + 1));
                     alunos.set(j + 1, temp);
 
@@ -50,7 +50,7 @@ public class sistema {
 
         System.out.println("\n -=-=-=-=-=-=-=-= Lista Ordenada por Idade -=-=-=-=-=-=-=-= ");
 
-        for (AlunoBoblle aluno : alunos) {
+        for (AlunoBubble aluno : alunos) {
             System.out.println("Nome: " + aluno.getNome() +
                     " | CPF: " + aluno.getCpf() +
                     " | Idade: " + aluno.getIdade());
