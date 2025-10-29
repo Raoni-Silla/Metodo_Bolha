@@ -14,12 +14,6 @@ public class Main {
 
         for (int i = 0; i < lista.length - 1; i++) {
 
-            // 0 < 5 - 1 - 0 = 4
-            // 1 < 5 - 1 - 1 = 3
-            // 2 < 5 - 1 - 2 = 2
-            // 3 < 5 - 1 - 3 = 1
-            // 4 < 5 - 1 - 4 = 0 < -- para aqui
-
             for (int j = 0; j < lista.length - 1 - i; j++) {
 
                 if (lista[j] > lista[j + 1]) {

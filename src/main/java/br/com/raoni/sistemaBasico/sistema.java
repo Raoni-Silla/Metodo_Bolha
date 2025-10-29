@@ -1,11 +1,12 @@
 package br.com.raoni.sistemaBasico;
 
-import br.com.raoni.sistemaBasico.entidades.Aluno;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import br.com.raoni.sistemaBasico.entidades.AlunoBoblle;
+
+
 
 public class sistema {
     public static void main(String[] args) {
@@ -15,17 +16,18 @@ public class sistema {
         System.out.println(" -=-=-=-=-=-=-=-= Ordenação de alunos apartir do bubble sort -=-=-=-=-=-=-=-= ");
         System.out.println(" -=-=-=-=-=-=-=-= Lista Original Sem Passar Pelo Bubble Sort -=-=-=-=-=-=-=-= ");
 
+
         em.getTransaction().begin();
 
-        String jpql = "select a from Aluno a";
-        TypedQuery<Aluno> query = em.createQuery(jpql, Aluno.class);
-        List<Aluno> alunos = query.getResultList();
+        String jpql = "select a from AlunoBoblle a";
+        TypedQuery<AlunoBoblle> query = em.createQuery(jpql, AlunoBoblle.class);
+        List<AlunoBoblle> alunos = query.getResultList();
 
         em.getTransaction().commit();
 
         em.close();
 
-        for (Aluno aluno : alunos) {
+        for (AlunoBoblle aluno : alunos) {
             System.out.println("Nome: " + aluno.getNome() +
                     " | CPF: " + aluno.getCpf() +
                     " | Idade: " + aluno.getIdade());
@@ -37,7 +39,7 @@ public class sistema {
                 if (alunos.get(j).getIdade() > alunos.get(j + 1).getIdade()) {
 
                     // troca de posição
-                    Aluno temp = alunos.get(j);
+                    AlunoBoblle temp = alunos.get(j);
                     alunos.set(j, alunos.get(j + 1));
                     alunos.set(j + 1, temp);
 
@@ -47,7 +49,8 @@ public class sistema {
 
 
         System.out.println("\n -=-=-=-=-=-=-=-= Lista Ordenada por Idade -=-=-=-=-=-=-=-= ");
-        for (Aluno aluno : alunos) {
+
+        for (AlunoBoblle aluno : alunos) {
             System.out.println("Nome: " + aluno.getNome() +
                     " | CPF: " + aluno.getCpf() +
                     " | Idade: " + aluno.getIdade());
